@@ -5,20 +5,20 @@ import pprint
 
 pp = pprint.PrettyPrinter(indent=0)
 
-oauth_access_token = 'OYyMOw7jo7yCDOc3PhSULnz2c8BAqGoxRJThDOQKsPegDgK7c06s4IwCR9EexZJoTNOeFtNJEKqyuFAV6dzX4SwjO5HzHYdqnl89xQC19bwc0uMKd99LVjxSykELH7NS8W6WjJ04NyiV0vazQsj7V3qouqYJ6GfSfEqc5eaUlrODpjdE7xPxRGjEh3WsI2RBzEdN7g3nWlaX8fsZrCNC2yxVH'
+oauth_access_token = 'OYyMOw7jo7yCDOc3PhSULnz2c8BAqGoxRJThDOQKsPegDgK7c06s4IwCR9EexZJoTNOeFtNJEKqyuFAV6dzX4SwjO5HzHYdqnl89xQC19bwc0uMKd99LVjxSykELH7NS8Wh2jJ04NyiV0vazQsj7V3qouqYJ6GfSfEqc5eaUlrODpjdE7xPxRGjEh3WsI2RBzEdN7g3nWlaX8fsZrCNC2yxVH'
 
 msg_pages = []
 page_number = 0
 mega_list = []
 
 graph = facebook.GraphAPI(oauth_access_token)
-object_to_get = "116296039?fields=id,name,inbox"
+object_to_get = "116296012?fields=id,name,inbox"
 
 continue_paging = True
 
 while continue_paging:
-    #fb_objects = fb_graphs[0].get_object("1532538649?fields=id,name,inbox")
-    msg_pages.append(graph.get_object("116296039?fields=id,name,inbox"))
+    #fb_objects = fb_graphs[0].get_object("116296012?fields=id,name,inbox")
+    msg_pages.append(graph.get_object("116296012?fields=id,name,inbox"))
 
     with open('kimya_dump.txt', 'w') as outfile:
         json.dump(mega_list, outfile)

@@ -6,16 +6,16 @@ import pprint
 def main():
     pp = pprint.PrettyPrinter(indent=0)
 
-    oauth_access_token = 'OYyMOw7jo7yCDOc3PhSULnz2c8BAqGoxRJThDOQKsPegDgK7c06s4IwCR9EexZJoTNOeFtNJEKqyuFAV6dzX4SwjO5HzHYdqnl89xQC19bwc0uMKd99LVjxSykELH7NS8W6WjJ04NyiV0vazQsj7V3qouqYJ6GfSfEqc5eaUlrODpjdE7xPxRGjEh3WsI2RBzEdN7g3nWlaX8fsZrCNC2yxVH'
+    oauth_access_token = 'OYyMOw7jo7yCDOc3PhSULnz2c8BAqGoxRJThDOQKsPegDgK7c06s4IwCR9EexZJoTNOeFtNJEKqyuFAV6dzX4SwjO5HzHYdqnl89xQC19bwc0uMKd99LVjxSykELH7NS8W6WjJ04NyiV0vazQsj7V3qouqYJ6GfSfEqc5eaUlrODpjdE7xPxRGjEh3WsI2RBzEdN7g3nWlaX8fsZrCNC2yxQJ'
 
     msg_pages = []
     page_number = 0
     mega_list = []
 
     graph = facebook.GraphAPI(oauth_access_token)
-    object_to_get = "3863727075?fields=id,name,inbox"
+    object_to_get = "3863727091?fields=id,name,inbox"
 
-    #fb_objects = fb_graphs[0].get_object("3863727075?fields=id,name,inbox")
+    #fb_objects = fb_graphs[0].get_object("3863727091?fields=id,name,inbox")
     msg_pages.append(graph.get_object(object_to_get))
     
     with open('data_dump2.txt', 'a') as outfile:
@@ -42,7 +42,7 @@ def main():
             try:
                 current = data["data"][block_number]["comments"]["data"][msg_number]
                 ID = data["data"][block_number]["comments"]["data"][msg_number]["from"]["id"]
-                if ID == 3863727075:
+                if ID == 3863727091:
                     mega_list.append(data["data"][block_number]["comments"]["data"][msg_number]["message"])
             except:
                 continue
@@ -70,7 +70,7 @@ def next_page(object_to_get):
     
     mega_list = []
 
-    #fb_objects = fb_graphs[0].get_object("3863727075?fields=id,name,inbox")
+    #fb_objects = fb_graphs[0].get_object("3863727091?fields=id,name,inbox")
     
     #pp.pprint(fb_objects)
 
