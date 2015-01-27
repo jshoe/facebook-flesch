@@ -1,5 +1,5 @@
 ===================
-Facebook Flesch-Kincaid tester
+Facebook Flesch-Kincaid Score Generator
 ===================
 
 This Hackathon project was intended to calculate and present Facebook users with their personal Flesch-Kincaid writing grade level, calculated from a sample of the user's messages on Facebook.
